@@ -1,13 +1,20 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>替罪羊树略解 | Harmonious Ray&#39;s Blog</title>
-<link rel="shortcut icon" href="https://harmoniousray.github.io/favicon.ico?v=1601532301695">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://harmoniousray.github.io/favicon.ico?v=1601532741630">
 <link rel="stylesheet" href="https://harmoniousray.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="替罪羊树略解 | Harmonious Ray&#39;s Blog - Atom Feed" href="https://harmoniousray.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
@@ -17,90 +24,81 @@
 
 不过替罪羊..." />
     <meta name="keywords" content="知识" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://harmoniousray.github.io">
-  <img class="avatar" src="https://harmoniousray.github.io/images/avatar.png?v=1601532301695" alt="">
-  </a>
-  <h1 class="site-title">
-    Harmonious Ray&#39;s Blog
-  </h1>
-  <p class="site-description">
-    Restarted.
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://harmoniousray.github.io">
+        <img src="https://harmoniousray.github.io/images/avatar.png?v=1601532741630" class="site-logo">
+        <h1 class="site-title">Harmonious Ray&#39;s Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-    
+        
       
-    
+        
       
-    
+        
       
-        <a href="https://www.zhihu.com/people/ling-chen-6dian-52" target="_blank">
-          <i class="ri-zhihu-line"></i>
-        </a>
+        
       
-    
+        
       
-    
+    </div>
+    <div class="site-description">
+      Restarted.
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://harmoniousray.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              替罪羊树略解
-            </h2>
-            <div class="post-info">
-              <span>
-                2020/10/01
-              </span>
-              <span>
-                11 min read
-              </span>
-              
-                <a href="https://harmoniousray.github.io/tag/GrRjOD15c/" class="post-tag">
-                  # 知识
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">替罪羊树略解</h2>
+            <div class="post-date">2020/10/01</div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <h3 id="1-概述">1. 概述</h3>
+            <div class="post-content" v-pre>
+              <h3 id="1-概述">1. 概述</h3>
 <p>个人感觉替罪羊树和 WBLT 是非常优美的了。</p>
 <p>替罪羊树是平衡树大家族里少数的不用旋转维护的数据结构，其维护平衡的核心思路是相当暴力直接的，就是将不平衡的子树“拍扁”成序列重构一棵树。因此，替罪羊树易于理解和实现。</p>
 <!-- more -->
@@ -410,101 +408,53 @@ int main()
 <li><a href="https://www.luogu.com.cn/blog/Apocrypha/scapegoattree-yang-xie"> 【洛谷日报#50】 Ambition 的 ScapeGoatTree 详解</a>。</li>
 </ul>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-%E6%A6%82%E8%BF%B0">1. 概述</a></li>
-<li><a href="#2-%E5%8E%9F%E7%90%86">2. 原理</a>
-<ul>
-<li><a href="#21-%E5%B9%B3%E8%A1%A1%E5%9B%A0%E5%AD%90">2.1 平衡因子</a></li>
-<li><a href="#22-%E9%87%8D%E6%9E%84">2.2 重构</a></li>
-<li><a href="#24-%E6%8F%92%E5%85%A5">2.4 插入</a></li>
-<li><a href="#25-%E5%88%A0%E9%99%A4">2.5 删除</a></li>
-<li><a href="#26-%E6%89%BE%E7%AC%AC-k-%E5%A4%A7%E5%92%8C%E6%9F%A5%E6%8E%92%E5%90%8D">2.6 找第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 大和查排名</a></li>
-<li><a href="#27-%E5%89%8D%E9%A9%B1%E4%B8%8E%E5%90%8E%E7%BB%A7">2.7 前驱与后继</a></li>
-<li><a href="#28%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">2.8时间复杂度</a></li>
-</ul>
-</li>
-<li><a href="#3-%E7%9B%B8%E5%85%B3">3. 相关</a></li>
-<li><a href="#4-%E4%BE%8B%E9%A2%98">4. 例题</a></li>
-<li><a href="#5-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">5. 参考资料</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
             </div>
-          </article>
-        </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://harmoniousray.github.io/tag/GrRjOD15c/" class="tag">
+                    知识
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://harmoniousray.github.io/post/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://harmoniousray.github.io/post/hello-gridea/">
-              <h3 class="post-title">
-                Hello Gridea
-              </h3>
-            </a>
+            
+
           </div>
-        
 
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://harmoniousray.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
+        </div>
       </div>
     </div>
 
-    <script>
-      hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+AOS.init();
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
+</script>
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
+
+
+
   </body>
 </html>
